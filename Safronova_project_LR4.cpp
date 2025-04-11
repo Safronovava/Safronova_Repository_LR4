@@ -35,7 +35,15 @@ void EnterN(int &number) {
     number = stoi(rawNumber);
 }
 
-bool FindDigitsFromRToL(int n, int k) {}
+bool FindDigitsFromRToL(int n, int k) {
+    string str = to_string(k);
+    if (str.length() < n) {
+        return false;
+    }
+
+    cout << "Это цифра: " << str[n - 1] << endl;
+    return true;
+}
 
 bool FindDigitsFromLToR(int n, int k) {}
 
