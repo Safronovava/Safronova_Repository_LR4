@@ -3,11 +3,47 @@
 
 using namespace std;
 
-void EnterK(int &number) {}
+void EnterK(int &number) {
+    string rawNumber;
+    
+    while (true)
+    {
+        cout << "Введите число K" << endl;
+        getline(cin, rawNumber);
+        try {
+            stoi(rawNumber);
+            break;
+        } catch (...) {}
+    }
+    
+    number = stoi(rawNumber);
+}
 
-void EnterN(int &number) {}
+void EnterN(int &number) {
+    string rawNumber;
+    
+    while (true)
+    {
+        cout << "Введите число N" << endl;
+        getline(cin, rawNumber);
+        try {
+            stoi(rawNumber);
+            break;
+        } catch (...) {}
+    }
+    
+    number = stoi(rawNumber);
+}
 
-bool FindDigitsFromRToL(int n, int k) {}
+bool FindDigitsFromRToL(int n, int k) {
+    string str = to_string(k);
+    if (str.length() < n) {
+        return false;
+    }
+
+    cout << "Это цифра: " << str[n - 1] << endl;
+    return true;
+}
 
 bool FindDigitsFromLToR(int n, int k) {}
 
