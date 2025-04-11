@@ -41,11 +41,19 @@ bool FindDigitsFromRToL(int n, int k) {
         return false;
     }
 
-    cout << "Это цифра: " << str[n - 1] << endl;
+    cout << "Это цифра: " << str[str.length() - n - 1] << endl;
     return true;
 }
 
-bool FindDigitsFromLToR(int n, int k) {}
+bool FindDigitsFromLToR(int n, int k) {
+    string str = to_string(k);
+    if (str.length() < n) {
+        return false;
+    }
+
+    cout << "Это цифра: " << str[n - 1] << endl;
+    return true;
+}
 
 int main() {
     int K; // Для хранения числа K
@@ -73,14 +81,20 @@ int main() {
                 if (N <= 0) {
                     cout << "Сначала введите число K и цифру N." << endl;
                 } else {
-                    FindDigitsFromRToL(N, K);
+                    bool result = FindDigitsFromRToL(N, K);
+                    if (!result) {
+                        return -1;
+                    }
                 }
                 break;
             case 3:
                 if (N <= 0) {
                     cout << "Сначала введите число K и цифру N." << endl;
                 } else {
-                    FindDigitsFromLToR(N, K);
+                    bool result = FindDigitsFromLToR(N, K);
+                    if (!result) {
+                        return -1;
+                    }
                 }
                 break;
             case 4:
